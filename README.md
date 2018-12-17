@@ -1,6 +1,8 @@
 # XOOPS to WordPress
 ##### XOOPS to WordPress Migration Plugin
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UD5BBZY7SRPFE)
+
 [![alt XOOPS to WordPress](vendor/xoopstowp.png)](https://angelorocha.com.br/contato-para-criar-sites-portais-e-sistemas-web)
 
 # Features
@@ -41,6 +43,9 @@
 <small>(In development)</small>
 
 [![alt XOOPS to WordPress Admin](vendor/xoopstowordpress_admin.png)](https://angelorocha.com.br/contato-para-criar-sites-portais-e-sistemas-web)
+
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UD5BBZY7SRPFE)
 
 
 # [Contact Me](https://angelorocha.com.br/contato-para-criar-sites-portais-e-sistemas-web)
