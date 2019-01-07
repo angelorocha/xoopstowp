@@ -1,0 +1,93 @@
+.xtw-container a,
+.xtw-container a:hover,
+.xtw-container a:link,
+.xtw-container a:visited,
+.xtw-container a:active,
+.xtw-container a:focus{
+    border:0;
+    text-decoration:none;
+    outline:0 !important;
+    outline:none !important;
+    box-shadow:none;
+    text-shadow:none;
+}
+.xtw-container{
+    background:#FFF;
+    max-width:880px;
+    margin:30px auto 0 auto;
+    padding:15px;
+    box-sizing:border-box;
+}
+.xtw-container h3{
+    margin:0 0 20px 0;
+    padding:0 0 5px 0;
+    border-bottom:2px solid #EEE;
+}
+.xtw-tabs{
+}
+.xtw-tabs:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.xtw-tabs .xtw-nav{
+    width:27.999999%;
+    float:left;
+    margin:0 0 0 0;
+}
+.xtw-tabs .xtw-nav li{
+    border-bottom:1px solid #FFF;
+    margin:0;
+}
+.xtw-tabs .xtw-nav li a{
+    background:#EAEAEA;
+    color:#8B8B8B;
+    padding:10px;
+    display:block;
+}
+.xtw-tabs .xtw-nav li a.xwt-active{
+    background:#09C;
+    color:#FFF;
+}
+.xtw-tabs .xtw-tab{
+    width:69.9999%;
+    float:right;
+    display:none;
+}
+.xtw-tabs .xtw-tab.xtw-active-tab{
+    display:block;
+}
+.xtw-tabs .xtw-tab h4{
+    font-size:1.3em;
+    color:#999;
+    border-bottom:2px solid #999;
+    margin:0 0 5px 0;
+    padding:0 0 5px 0;
+}
+.xtw-container-footer{
+    border-top:1px solid #EAEAEA;
+    margin-top:15px;
+    font-size:0.9em;
+    color:#999;
+    padding:5px 0 0 0;
+    text-align:center;
+}
+.xtw-option-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.xtw-option-table td{
+    border:1px solid #DDD;
+    padding:10px;
+}
+.xtw-option-table td.table-head{
+    background:#DDD;
+    font-weight:bold;
+    color:#666;
+    font-size:1.2em;
+}
+
+.xtw-option-table td label small{
+    display:block;
+}
