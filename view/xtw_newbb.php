@@ -15,3 +15,5 @@ $forum->xtw_get_replies();
 #$forum->xtw_set_forums();
 #$forum->xtw_set_topics();
 #$forum->xtw_set_replies();
+
+#tools.php?page=bbp-repair

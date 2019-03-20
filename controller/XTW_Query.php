@@ -54,7 +54,7 @@ abstract class XTW_Query {
 			false;
 		endif;
 
-		$query = "SELECT $col FROM $data WHERE meta_key LIKE '$meta_key' AND meta_value LIKE '$meta_value';";
+		$query = "SELECT $col FROM $data WHERE meta_key LIKE '$meta_key' AND meta_value LIKE '$meta_value' LIMIT 1;";
 
 		$result = $wpdb->get_results( $query );
 

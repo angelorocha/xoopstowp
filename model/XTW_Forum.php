@@ -6,7 +6,7 @@
  * Site: www.angelorocha.com.br
  */
 
-class XTW_Forum {
+class XTW_Forum{
 
 	public function __construct() {
 	}
@@ -43,30 +43,28 @@ class XTW_Forum {
 
 		foreach ( self::xtw_get_forums() as $key => $forum ):
 			$check_post = XTW_Query::xtw_get_old_id( 0, $forum->_forum_old_id, '_forum_old_id' );
-			$post       = array(
+
+			$post = array(
 				'post_author'  => XTW_Query::xtw_get_old_id( 1, $forum->post_author ),
 				'post_title'   => $forum->post_title,
 				'post_date'    => $forum->post_date,
 				'post_content' => XTW_BBcode::bbcode_to_html_parser( $forum->post_content ),
 				'post_status'  => 'publish',
 				'post_type'    => 'forum',
-				'menu_order'   => $forum->menu_order
-			);
-			$meta       = array(
-				'_forum_old_id'             => $forum->_forum_old_id,
-				'_bbp_forum_id'             => '',
-				'_bbp_forum_subforum_count' => '0',
-				'_bbp_reply_count'          => $forum->_bbp_reply_count,
-				'_bbp_topic_count'          => $forum->_bbp_topic_count,
-				'_bbp_topic_count_hidden'   => '0',
-				'_bbp_total_reply_count'    => $forum->_bbp_reply_count,
-				'_bbp_total_topic_count'    => $forum->_bbp_topic_count,
+				'menu_order'   => $forum->menu_order,
+				'meta_input'   => array(
+					'_forum_old_id'             => $forum->_forum_old_id,
+					'_bbp_forum_id'             => '',
+					'_bbp_forum_subforum_count' => '0',
+					'_bbp_reply_count'          => $forum->_bbp_reply_count,
+					'_bbp_topic_count'          => $forum->_bbp_topic_count,
+					'_bbp_topic_count_hidden'   => '0',
+					'_bbp_total_reply_count'    => $forum->_bbp_reply_count,
+					'_bbp_total_topic_count'    => $forum->_bbp_topic_count,
+				)
 			);
 			if ( ! $check_post ):
-				$post_id = wp_insert_post( $post );
-				foreach ( $meta as $k => $value ):
-					add_post_meta( $post_id, $k, $k === '_bbp_forum_id' ? $post_id : $value );
-				endforeach;
+				wp_insert_post( $post );
 			endif;
 		endforeach;
 	}
@@ -113,29 +111,26 @@ class XTW_Forum {
 		foreach ( self::xtw_get_topics() as $key => $topic ):
 			$check_post  = XTW_Query::xtw_get_old_id( 0, $topic->_topic_old_id, '_topic_old_id' );
 			$post_author = XTW_Query::xtw_get_old_id( 1, $topic->post_author );
-			$post        = array(
+
+			$post = array(
 				"post_author"  => ( ! empty( $post_author ) ? $post_author : "1" ),
 				"post_title"   => $topic->post_title,
 				"post_date"    => $topic->post_date,
 				"post_content" => XTW_BBcode::bbcode_to_html_parser( $topic->post_content ),
 				"post_status"  => "publish",
 				"post_type"    => "topic",
-				"post_parent"  => XTW_Query::xtw_get_old_id( 0, $topic->_forum_old_id, '_forum_old_id' )
-			);
-
-			$meta = array(
-				"post_views"       => $topic->post_views,
-				"_topic_old_id"    => $topic->_topic_old_id,
-				"_bbp_forum_id"    => XTW_Query::xtw_get_old_id( 0, $topic->_forum_old_id, '_forum_old_id' ),
-				"_bbp_reply_count" => $topic->_bbp_reply_count,
-				"_bbp_topic_id"    => ""
+				"post_parent"  => XTW_Query::xtw_get_old_id( 0, $topic->_forum_old_id, '_forum_old_id' ),
+				"meta_input"   => array(
+					"post_views"       => $topic->post_views,
+					"_topic_old_id"    => $topic->_topic_old_id,
+					"_bbp_forum_id"    => XTW_Query::xtw_get_old_id( 0, $topic->_forum_old_id, '_forum_old_id' ),
+					"_bbp_reply_count" => $topic->_bbp_reply_count,
+					"_bbp_topic_id"    => ""
+				)
 			);
 
 			if ( ! $check_post ):
-				$post_id = wp_insert_post( $post );
-				foreach ( $meta as $k => $value ):
-					add_post_meta( $post_id, $k, $k === '_bbp_topic_id' ? $post_id : $value );
-				endforeach;
+				wp_insert_post( $post );
 			endif;
 
 		endforeach;
@@ -191,20 +186,17 @@ class XTW_Forum {
 				'post_type'    => 'reply',
 				'post_parent'  => XTW_Query::xtw_get_old_id( 0, $reply->_topic_old_id, '_topic_old_id' ),
 				'menu_order'   => $key,
-			);
-			$meta = array(
-				"_reply_old_id" => $reply->_reply_old_id,
-				"_topic_old_id" => $reply->_topic_old_id,
-				"_forum_old_id" => $reply->_forum_old_id,
-				"_bbp_forum_id" => XTW_Query::xtw_get_old_id( 0, $reply->_forum_old_id, '_forum_old_id' ),
-				"_bbp_topic_id" => XTW_Query::xtw_get_old_id( 0, $reply->_topic_old_id, '_topic_old_id' )
+				'meta_input'   => array(
+					"_reply_old_id" => $reply->_reply_old_id,
+					"_topic_old_id" => $reply->_topic_old_id,
+					"_forum_old_id" => $reply->_forum_old_id,
+					"_bbp_forum_id" => XTW_Query::xtw_get_old_id( 0, $reply->_forum_old_id, '_forum_old_id' ),
+					"_bbp_topic_id" => XTW_Query::xtw_get_old_id( 0, $reply->_topic_old_id, '_topic_old_id' )
+				)
 			);
 
 			if ( ! $check_post ):
-				$post_id = wp_insert_post( $post );
-				foreach ( $meta as $k => $value ):
-					add_post_meta( $post_id, $k, $value );
-				endforeach;
+				wp_insert_post( $post );
 			endif;
 
 		endforeach;

@@ -17,13 +17,45 @@ XTW_Import::xtw_autoload_plugin_files( 'controller/cpt' );
 XTW_Import::xtw_autoload_plugin_files( 'model' );
 
 /*** Custom Post Types */
-XTW_CPTSet::xtw_cpt_add( 'article', 'Artigo', 'Gerenciador de Artigos', 'category_article', 'Categoria Artigos' );
-XTW_CPTSet::xtw_cpt_add( 'videos', 'Vídeo', 'Gerenciador de Vídeos' );
-XTW_CPTSet::xtw_cpt_add( 'parceiros', 'Parceiro', 'Gerenciador de Parceiros', 'parceiros_tax', 'Categoria Parceiros' );
-XTW_CPTSet::xtw_cpt_add( 'downloads', 'Download', 'Gerenciador de Downloads', 'downloads_tax', 'Categoria Downloads' );
-XTW_CPTSet::xtw_cpt_add( 'wflinks', 'Diretorio', 'Gerenciador de Diretorio de Endereços', 'wflinks_tax', 'Categoria Links' );
+XTW_CPTSet::xtw_cpt_add(
+	'article',
+	__('Article', 'xtw'),
+	__('Articles Management', 'xtw'),
+	'category_article',
+	__('Articles Categories', 'xtw')
+);
+
+XTW_CPTSet::xtw_cpt_add(
+	'videos',
+	__('Video', 'xtw'),
+	__('Videos Management', 'xtw')
+);
+
+XTW_CPTSet::xtw_cpt_add(
+	'partners',
+	__('Partner','xtw'),
+	__('Partners Management', 'xtw'),
+	'partners_tax',
+	__('Partners Categories', 'xtw')
+);
+
+XTW_CPTSet::xtw_cpt_add(
+	'downloads',
+	__('Download', 'xtw'),
+	__('Downloads Management', 'xtw'),
+	'downloads_tax',
+	__('Downloads categories', 'xtw')
+);
+
+XTW_CPTSet::xtw_cpt_add(
+	'wflinks',
+	__('WF Link', 'xtw'),
+	__('WP Links Module Management', 'xtw'),
+	'wflinks_tax',
+	__('WP Links Categories')
+);
 
 new XTW_Import();
 
 /*** Experimental */
-#new XTW_301_Redirects();
+new XTW_301_Redirects();

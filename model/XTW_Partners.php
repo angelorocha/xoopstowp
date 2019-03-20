@@ -46,14 +46,14 @@ class XTW_Partners{
 				'post_date'    => $key->post_date,
 				'post_content' => XTW_BBcode::bbcode_to_html_parser( $content ),
 				'post_status'  => 'publish',
-				'post_type'    => 'parceiros',
+				'post_type'    => 'partners',
 				'meta_input'   => array(
 					'post_views'       => $key->post_views,
 					'_partner_url'     => $key->_partner_url,
 					'_partners_old_id' => $key->_partners_old_id
 				),
 				'tax_input'    => array(
-					'parceiros_tax' => XTW_Query::xtw_get_old_id( 2, $key->_xpcat_old_id, '_xpcat_old_id' ),
+					'partners_tax' => XTW_Query::xtw_get_old_id( 2, $key->_xpcat_old_id, '_xpcat_old_id' ),
 				)
 			);
 

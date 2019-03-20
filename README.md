@@ -9,6 +9,7 @@
 - XOOPS User import;
 - Get all content images embed;
 - Add featured images in WordPress content;
+- Redirect all old content to new WordPress Content;
 
 # Modules
 - **newBB**
@@ -37,6 +38,9 @@
     - Add WFLinks item info to WordPress post content;
 - XOOPSTube
     - Auto add youtube video thumbnail to post featured image;
+    
+- Comments
+    - In development...
     
 # Experimental
 ##### Redirect all old content to WordPress new Content

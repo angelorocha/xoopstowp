@@ -13,5 +13,3 @@ $newsCats->xtw_get_news_topics();
 $news = new XTW_News();
 $news->xtw_get_news();
 #$news->xtw_set_news();
-
-#tools.php?page=bbp-repair
